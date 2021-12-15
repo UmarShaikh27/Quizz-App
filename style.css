@@ -1,0 +1,153 @@
+:root{
+    --ltpurple: #C8B8DB;
+    --purple: #50254C;
+    --violet: #70587C;
+    --snow: #F9F4F5;
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    
+}
+.mainContainer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.quizContainer{
+    width: 80%;
+    border: 1px solid black;
+    padding: 20px;
+    
+}
+
+/* HEADER /////////////////////// */
+
+.upperhead{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+}
+.info > div{
+    display: flex;
+    
+}
+.info h3{
+    margin-right: 10px;
+}
+.lowerhead h1{
+    text-align: center;
+    font-size: 40px;
+    
+}
+
+/* BODY //////////////////// */
+
+.question{
+    text-align: center;
+    border: 1px solid black;
+    margin: 5px 0 25px 0;
+    padding: 15px 20px;
+    border-radius: 25px;
+}
+.options{
+    margin: 10px 0;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.options li{
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 5px 0;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px 10px;
+    /*for aligning text*/
+    display: flex;
+    justify-content: center;
+}
+
+/* FOOTER/////////// */
+.footer{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px 0 0 0;
+
+}
+/* .footer button{
+    width: 100px;
+    padding: 7px;
+    text-align: center;
+    cursor: pointer;
+
+} */
+
+
+
+
+/* CSS */
+.button-68 {
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.button-68:hover {
+  background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.button-68:active {
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.button-68:hover {
+  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
