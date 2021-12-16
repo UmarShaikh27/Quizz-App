@@ -178,7 +178,7 @@
     cursor: pointer;
     transition: all 0.3s;
     border: none;
-    display: none;
+    /* display: none; */
 }
 #startquizbtn:hover{
     background-color: black;
@@ -186,9 +186,23 @@
     transform: scale(1.1);
 }
 
+/* RESULTS CONTiner  */
+.resultCont{
+    font-size: 25px;
+   text-align: left;
+   display: none;
+
+}
+.resultCont th{
+    padding: 5px;
+    padding-right: 40px;
+}
 @media screen and (max-width: 596px){
     .options li{
         font-size: 15px;
         width: 47%;
+    }
+    .resultCont{
+        font-size: 17px;
     }
 }

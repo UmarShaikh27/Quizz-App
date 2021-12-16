@@ -71,6 +71,7 @@ var thenextbtn = document.getElementById("thenextbtn")
 var startquizbtn = document.getElementById("startquizbtn")
 var quizCont = document.getElementById("quizCont")
 var seconds = document.getElementById("seconds")
+var theResultCont = document.getElementById("theResultCont")
 
 for(var x = 0; x<answers.length ; x++){
   answers[x].setAttribute("onclick" , "selectfunc(this)")
@@ -104,6 +105,7 @@ function nextfunc(x){
   }
   else{
     quizCont.style.display = "none"
+    theResultCont.style.display = "block"
   }
   // enable li//
  for(var x = 0; x<answers.length ; x++){
