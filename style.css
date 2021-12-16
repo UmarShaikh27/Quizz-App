@@ -26,8 +26,9 @@
 }
 .quizContainer{
     width: 80%;
-    border: 1px solid black;
+    border: 4px solid var(--ltpurple);
     padding: 20px;
+    display: none;
     
 }
 
@@ -90,7 +91,13 @@
     justify-content: center;
     font-size: 20px;
     font-weight: bolder;
+    transition: all 0.2s;
     /* font-family: sans-serif; */
+}
+.options li:hover{
+    transform: scale(1.1);
+    color: var(--violet);
+    cursor: pointer;
 }
 
 /* FOOTER/////////// */
@@ -102,6 +109,9 @@
     flex-direction: column;
     margin: 20px 0 0 0;
 
+}
+.timer{
+    display: flex;
 }
 
 
@@ -118,7 +128,7 @@
   cursor: pointer;
   display: inline-block;
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
-  font-size: 16px;
+  font-size: 21px;
   font-weight: 600;
   letter-spacing: normal;
   line-height: 1;
@@ -136,6 +146,7 @@
   vertical-align: top;
   white-space: nowrap;
   margin-bottom: 10px;
+  width: 160px;
 }
 
 .button-68:hover {
@@ -153,4 +164,31 @@
 
 .button-68:hover {
   box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+
+/* STart btn */
+
+#startquizbtn{
+    padding: 20px;
+    font-size: 30px;
+    background-color: var(--violet);
+    color: var(--snow);
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    display: none;
+}
+#startquizbtn:hover{
+    background-color: black;
+    color: var(--purple);
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 596px){
+    .options li{
+        font-size: 15px;
+        width: 47%;
+    }
 }

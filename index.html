@@ -20,8 +20,11 @@
 
 
 
+
+
+
 <div class="mainContainer">
-    <div class="quizContainer">
+    <div class="quizContainer" id="quizCont">
 
         <section class="header">
             <div class="upperhead">
@@ -37,7 +40,7 @@
                 </div>
     
                 <div class="page">
-                    <h3>3/10</h3>
+                    <h3 id="pagenum">1/5</h3>
                 </div>
             </div>
 
@@ -61,10 +64,19 @@
         </section>
 
         <section class="footer">
-            <button class="button-68" role="button" onclick="nextfunc(this)">Button 68</button>
-            <h4 class="timer">00:40</h4>
+            <button class="button-68" role="button" onclick="nextfunc(this)" id="thenextbtn">Next</button>
+            <div class="timer"><h4 >00: </h4><h4 id="seconds">60</h4></div>
         </section>
     </div>
+
+    <button id="startquizbtn" onclick="startquizfunc(this)">Start Quiz?</button>
+
+    <div class="resultCont">
+        
+    </div>
+
+
+
 </div>
 
 

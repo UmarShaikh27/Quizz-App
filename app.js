@@ -1,60 +1,60 @@
 var arrayofobj = [
   {
-    num: 1,
-    question: "What is the full form of HTML?",
+    num: "1/5",
+    question: "HTML stand for",
     options: {
-      a: "Hyper Text Markup Language",
-      b: "Hyper Text Programming Language",
-      c: "Hyper Text Styling Language",
-      d: "Hyper Text Scripting Language",
+      a: "Hyper text markup Language",
+      b: "Hyper text programming Language",
+      c: "Hyper text styling Language",
+      d: "Hyper text scripting Language",
     },
-    correctAns: "Hyper Text Markup Language",
+    correctAns: "Hyper text markup Language",
   },
   {
-    num: 2,
-    question: "Choose the correct HTML element for the largest heading:",
+    num: "2/5",
+    question: "Which type of JavaScript Languages is",
     options: {
-      a: "<head> ",
-      b: "<h1>",
-      c: "<h6>",
-      d: "<heading>",
+      a: "Object-Oriented ",
+      b: "Object-Base",
+      c: "Assembly Languages",
+      d: "high Level",
     },
-    correctAns: "<h1>",
+    correctAns: "Object-Base",
   },
   {
-    num: 3,
-    question: "What is the correct HTML element for inserting a line break?",
+    num: "3/5",
+    question: "The 'function' and  'var' are known as:",
     options: {
-      a: "<br>",
-      b: "<break>",
-      c: "<lb>",
-      d: "<strong>",
+      a: "Keywords",
+      b: "Data types",
+      c: "Declaration statements",
+      d: "Prototypes",
     },
-    correctAns: "<br>",
+    correctAns: "Declaration statements",
   },
   {
-    num: 4,
-    question: "Choose the correct HTML element to define important text",
+    num: "4/5",
+    question: "who is the present president of pakistan",
     options: {
-      a: "<i>",
-      b: "<strong>",
-      c: "<important>",
-      d: "<b>",
+      a: "Arif Alvi",
+      b: "Imran Khan",
+      c: "Nawaz Sharif",
+      d: "Zardari",
     },
-    correctAns: "<strong>",
+    correctAns: "Arif Alvi",
   },
   {
-    num: 5,
-    question: "How can you make a numbered list?",
+    num: "5/5",
+    question: "How many prayers in a day:",
     options: {
-      a: "<dl>",
-      b: "<list>",
-      c: "<ol>",
-      d: "<ul>",
+      a: "6",
+      b: "5",
+      c: "3",
+      d: "none",
     },
-    correctAns: "<ol>",
+    correctAns: "5",
   },
-]
+];
 
 
 
@@ -65,22 +65,96 @@ var wrongAns = 0
 
 var question = document.getElementById("question");
 var answers = document.getElementsByClassName("answers");
+var pagenum = document.getElementById("pagenum")
+
+var thenextbtn = document.getElementById("thenextbtn")
+var startquizbtn = document.getElementById("startquizbtn")
+var quizCont = document.getElementById("quizCont")
+var seconds = document.getElementById("seconds")
+
+for(var x = 0; x<answers.length ; x++){
+  answers[x].setAttribute("onclick" , "selectfunc(this)")
+}
 
 
 
-function nextfunc(x){
+function startquizfunc(x){
 
+  //SETTING DISPLAYS
+  startquizbtn.style.display = "none"
+  quizCont.style.display = "block"
+  thenextbtn.style.visibility = "hidden"
+
+  //SETTING ELEMENTS//
   question.innerHTML = arrayofobj[counter].question
   answers[0].innerHTML = arrayofobj[counter].options.a
   answers[1].innerHTML = arrayofobj[counter].options.b
   answers[2].innerHTML = arrayofobj[counter].options.c
   answers[3].innerHTML = arrayofobj[counter].options.d
+  pagenum.innerHTML = arrayofobj[counter].num
 
+}
+
+function nextfunc(x){
+  
+  //next function//
+  counter++
+  if(counter< arrayofobj.length){
+  startquizfunc()
+  }
+  else{
+    quizCont.style.display = "none"
+  }
+  // enable li//
+ for(var x = 0; x<answers.length ; x++){
+  answers[x].style.pointerEvents = "visible"
+  answers[x].style.color = "black"
+
+}
+thenextbtn.style.visibility = "hidden"
+if(arrayofobj[counter].num === "5/5"){
+  thenextbtn.innerHTML = "Submit"
+}
 
 
 
 }
 
+function selectfunc(x){
+
+  var currentAns = arrayofobj[counter].correctAns
+  
+  if(x.innerHTML == currentAns){
+    console.log("yeah");
+    rightAns++
+  }
+  else{
+    console.log("noope");
+    wrongAns++
+  }
+  //change selected li colour//
+  x.style.color = "var(--violet)"
+
+  // disable lli//
+  for(var x = 0; x<answers.length ; x++){
+    answers[x].style.pointerEvents = "none"
+  }
+  //button visible.//
+  thenextbtn.style.visibility = "visible"
+  
+}
 
 
+// var secjs = 60
+// var timer = setInterval(function(){
 
+//   secjs--
+//   seconds.innerHTML = secjs
+  
+//   if(secjs === 00){
+//     clearInterval(timer)
+//     quizCont.style.display = "none";
+//     // resultBox.style.display = "block";
+//   }
+
+// } , 1000);
