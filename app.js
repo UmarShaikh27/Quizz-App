@@ -73,10 +73,28 @@ var quizCont = document.getElementById("quizCont")
 var seconds = document.getElementById("seconds")
 var theResultCont = document.getElementById("theResultCont")
 
+var stdName = document.getElementById("stdName")
+var stdEmail = document.getElementById("stdEmail")
+var userName = document.getElementById("userName")
+var userEmail = document.getElementById("userEmail")
+var userPassword = document.getElementById("userPassword")
+
+var correctAnswer = document.getElementById("correctAnswer")
+var wrongAnswer = document.getElementById("wrongAnswer")
+var marksGained = document.getElementById("marksGained")
+
+
+
+// SETTING ONLCLICK ON ANSWERS ///////
 for(var x = 0; x<answers.length ; x++){
   answers[x].setAttribute("onclick" , "selectfunc(this)")
 }
 
+function formsubmit(x){
+  x.parentNode.style.display = "none"
+  startquizbtn.style.display = "block"
+
+}
 
 
 function startquizfunc(x){
@@ -114,11 +132,13 @@ function nextfunc(x){
 
 }
 thenextbtn.style.visibility = "hidden"
-if(arrayofobj[counter].num === "5/5"){
-  thenextbtn.innerHTML = "Submit"
-}
+// if(arrayofobj[counter].num === "5/5"){
+//   thenextbtn.innerHTML = "Submit"
+// }
 
-
+correctAnswer.innerHTML = rightAns
+wrongAnswer.innerHTML = wrongAns
+marksGained.innerHTML = rightAns*2
 
 }
 
@@ -146,17 +166,17 @@ function selectfunc(x){
   
 }
 
+//TIMER////
+var secjs = 60
+var timer = setInterval(function(){
 
-// var secjs = 60
-// var timer = setInterval(function(){
-
-//   secjs--
-//   seconds.innerHTML = secjs
+  secjs--
+  seconds.innerHTML = secjs
   
-//   if(secjs === 00){
-//     clearInterval(timer)
-//     quizCont.style.display = "none";
-//     // resultBox.style.display = "block";
-//   }
+  if(secjs === 00){
+    clearInterval(timer)
+    quizCont.style.display = "none";
+    // resultBox.style.display = "block";
+  }
 
-// } , 1000);
+} , 1000);
