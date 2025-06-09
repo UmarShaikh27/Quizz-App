@@ -102,7 +102,7 @@ function startquizfunc(x){
   //SETTING DISPLAYS
   startquizbtn.style.display = "none"
   quizCont.style.display = "block"
-  thenextbtn.style.visibility = "hidden"
+  thenextbtn.style.display = "none" // Changed from visibility to display
 
   //SETTING ELEMENTS//
   question.innerHTML = arrayofobj[counter].question
@@ -112,34 +112,36 @@ function startquizfunc(x){
   answers[3].innerHTML = arrayofobj[counter].options.d
   pagenum.innerHTML = arrayofobj[counter].num
 
+  // Reset answer options interactivity
+  for(var i = 0; i < answers.length; i++) {
+    answers[i].style.pointerEvents = "auto"
+    answers[i].style.color = "black"
+  }
 }
 
 function nextfunc(x){
   
   //next function//
   counter++
-  if(counter< arrayofobj.length){
-  startquizfunc()
+  if(counter < arrayofobj.length){
+    startquizfunc()
   }
   else{
     quizCont.style.display = "none"
     theResultCont.style.display = "block"
+    
+    // Update results
+    correctAnswer.innerHTML = rightAns
+    wrongAnswer.innerHTML = wrongAns
+    marksGained.innerHTML = rightAns*2
   }
-  // enable li//
- for(var x = 0; x<answers.length ; x++){
-  answers[x].style.pointerEvents = "visible"
-  answers[x].style.color = "black"
 
-}
-thenextbtn.style.visibility = "hidden"
-// if(arrayofobj[counter].num === "5/5"){
-//   thenextbtn.innerHTML = "Submit"
-// }
+  // Hide next button until answer is selected
+  thenextbtn.style.display = "none"
 
-correctAnswer.innerHTML = rightAns
-wrongAnswer.innerHTML = wrongAns
-marksGained.innerHTML = rightAns*2
-
+  if(counter === arrayofobj.length - 1){
+    thenextbtn.innerHTML = "Submit"
+  }
 }
 
 function selectfunc(x){
@@ -160,9 +162,8 @@ function selectfunc(x){
   // disable lli//
   for(var x = 0; x<answers.length ; x++){
     answers[x].style.pointerEvents = "none"
-  }
-  //button visible.//
-  thenextbtn.style.visibility = "visible"
+  }  //button visible.//
+  thenextbtn.style.display = "block"
   
 }
 
