@@ -174,7 +174,7 @@ var timer = setInterval(function(){
   secjs--
   seconds.innerHTML = secjs
   
-  if(secjs === 00){
+  if(secjs === 0){
     clearInterval(timer)
     quizCont.style.display = "none";
     // resultBox.style.display = "block";
